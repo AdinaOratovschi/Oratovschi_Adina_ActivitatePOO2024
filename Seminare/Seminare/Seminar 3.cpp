@@ -6,15 +6,17 @@ class Magazin
 public: //se recomanda sa fie atributele in private mereu
 	string oras;
 	int nrAngajati;
+	float* salarii;
 	float suprafata;
 	const int anDeschidere; //const -> nu se schimba valoarea pe toata durata de viata a obiectului
 	static int impozitM2; //static -> se declara in zona de memorie a clasei
 
-	Magazin():anDeschidere(2024),nrAngajati(2) //-> merge sa atribuim si pentru orice atribut, nu numai constante
+	Magazin():anDeschidere(2024),nrAngajati(0) //-> merge sa atribuim si pentru orice atribut, nu numai constante; lista de initializare a constructorului
 	{
 		this->oras = "Bucuresti";
 		this->suprafata = 50;
-
+		this->salarii = NULL; //null alias pt 0
+							//nullptr nu e alias; sa nu le alternam
 	}
 	//constructorul implicit nu are tip returnat deci numele este cel al clasei
 
@@ -23,7 +25,80 @@ public: //se recomanda sa fie atributele in private mereu
 		this->oras = oras;
 		this->nrAngajati = nrAngajati;
 		this->suprafata = suprafata;
+		this->salarii = new float[nrAngajati];
+		for (int i = 0;i < nrAngajati;i++)
+		{
+			this->salarii[i] = 2000 + i;
+		}
+	}
 
+	Magazin(const Magazin& magazin):anDeschidere(magazin.anDeschidere)
+	{
+		this->oras = magazin.oras;
+		this->nrAngajati = magazin.nrAngajati;
+		this->salarii = new float[magazin.nrAngajati]; //nu dezalocam memorie pt ca cream ceva nou
+		for (int i = 0; i < nrAngajati; i++)
+		{
+			this->salarii[i] = magazin.salarii[i];
+		}
+		this->suprafata = magazin.suprafata;
+	}
+
+	int gerNrAngajati()
+	{
+		return this->nrAngajati;
+	}
+
+	void setNrAngajati(int nrAngajati, float* salarii)
+	{
+		if (nrAngajati > 0)
+		{
+			this->nrAngajati = nrAngajati;
+			if (this->salarii != NULL)
+			{
+				delete[]this->salarii;
+			}
+			this->salarii = new float[this->nrAngajati];
+			for (int i = 0;i < nrAngajati;i++)
+			{
+				this->salarii[i] = salarii[i];
+			}
+		}
+	}
+
+	~Magazin()
+	{
+		if (this->salarii)
+		{
+			delete[]this->salarii;
+		}
+	}//cand se termina durata de viata a obiectului se sterge; se termina unde se termina blocul obiectului respectiv (ex. in main)
+
+	float getSuprafata()
+	{
+		return this->suprafata;
+	}
+
+	void setSuprafata(float suprafata)
+	{
+		if (suprafata > 0)
+		{
+			this->suprafata = suprafata;
+		}
+		
+	}
+
+	float* getSalarii()
+	{
+		return this->salarii;
+	}
+
+	float getSalariu(int index)
+	{
+		if (index >= 0 && index < this->nrAngajati)
+		{
+			return this->salarii[index];
+		}
 	}
 
 	void afisare() //functia nu primeste parametrii pt ca avem this, primeste Magazin (?)
@@ -73,31 +148,17 @@ int Magazin::impozitM2 = 2; //:: operator de rezolutie -> acceseaza in clasa
 int main()
 {
 	Magazin m1;
-	m1.afisare();
+	cout << m1.gerNrAngajati() << endl;
+	m1.setNrAngajati(6, new float[6]{2,5,6,1,7,9});//initializare inline
+	cout << m1.gerNrAngajati() << endl;
 
-	Magazin m2("Iasi", 10, 200, 2019);
-	m2.afisare();
+	Magazin m2("Bucuresti", 3, 80, 2019);
+	cout << m2.getSalarii()[1] << endl;
+	cout << m2.getSalariu(1) << endl;
 
-	Magazin* pointer = new Magazin("Timisoara", 5, 250, 2018);
-	pointer->afisare(); //-> face dereferentiere si accesare
-	
-	cout << "Suprafata medie pe angajat este: " << pointer->calculeazaSuprafataMedie()<<endl;
+	m2.setNrAngajati(5, new float[5]{9,6,4,2,7});
+	cout << m2.getSalariu(4) << endl;
 
-	int nrMagazine = 3;
-	Magazin* vector = new Magazin[nrMagazine];
-	//in cazul in care nu avem niciun constructor vine compilatorul si va face el un constructor implicit cu valori random
-	//daca avem doar un constructor CU parametrii nu vom putea face un vector, pentru ca vectorul foloseste constructorul implicit
-	for (int i = 0;i < nrMagazine;i++)
-	{
-		vector[i].afisare(); //indexul [] face dereferentiere si deplasare deci nu avem sageata
-		//(*(vector+1)).afisare = deplasare - deferentiere - afisare
-		
-	}
-
-	Magazin::modificaImpozit(3); //sau
-	m1.modificaImpozit(4);
-
-	cout << "Suprafata totala este: " << Magazin::calculeazaSuprafataTotala(vector, nrMagazine)<<endl;
-	delete[] vector;
-	delete[] pointer;
+	Magazin m3(m2);//prima met de a apela const de copy
+	Magazin m4 = m2;//a doua met de a apela const de copy
 }
