@@ -1,7 +1,8 @@
-﻿  Task_2.cpp
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_2.cpp(20,27): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_2.cpp(75,32): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_2.cpp(122,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_2.cpp(162,21): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_2.cpp(169,39): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Task_3.cpp
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(22,27): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(152,32): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(276,20): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(410,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(427,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(436,24): warning C4305: 'argument': truncation from 'double' to 'float'
   Task-uri suplimentare.vcxproj -> C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\x64\Debug\Task-uri suplimentare.exe
