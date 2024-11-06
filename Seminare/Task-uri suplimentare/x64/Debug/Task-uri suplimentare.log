@@ -1,8 +1,9 @@
-﻿  Task_3.cpp
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(22,27): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(152,32): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(276,20): warning C4305: '=': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(410,21): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(427,39): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_3.cpp(436,24): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Task_4.cpp
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(22,27): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(201,32): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(367,20): warning C4305: '=': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(546,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(564,12): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(576,39): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Task-uri suplimentare\Task_4.cpp(595,24): warning C4305: 'argument': truncation from 'double' to 'float'
   Task-uri suplimentare.vcxproj -> C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\x64\Debug\Task-uri suplimentare.exe
