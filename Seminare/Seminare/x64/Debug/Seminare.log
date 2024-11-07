@@ -1,4 +1,4 @@
 ﻿  Seminar 3.cpp
 C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3.cpp(31,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3.cpp(82,1): warning C4715: 'Magazin::getSalariu': not all control paths return a value
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3.cpp(102,1): warning C4715: 'Magazin::getSalariu': not all control paths return a value
   Seminare.vcxproj -> C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\x64\Debug\Seminare.exe

@@ -140,10 +140,84 @@ public: //se recomanda sa fie atributele in private mereu
 		}
 		return suma;
 	}
+
+	//tipReturnat nume (lista parametrii)
+	//m4=m3=m2 apel in cascada
+
+	Magazin operator=(const Magazin& m) //const punem referinta
+	{
+		if (&m != this) //verificare de autoasignare
+		{
+			oras = m.oras;
+			nrAngajati = m.nrAngajati;
+			if (salarii != NULL)
+			{
+				delete[]salarii;
+			}
+			salarii = new float[m.nrAngajati];
+			for (int i = 0; i < m.nrAngajati; i++)
+			{
+				salarii[i] = m.salarii[i];
+			}
+			suprafata = m.suprafata;
+		}
+		return *this; //returnam obiectul de la adresa lui this
+	}
+
+	//polimorfism prin tipul parametrii si/sau nr de parametrii
+
+	Magazin operator+(const Magazin& m)
+	{
+		Magazin aux = *this;
+		aux.suprafata = aux.suprafata + m.suprafata;
+		return aux;
+	}
+
+	Magazin operator+(const Magazin& m)const
+	{
+		Magazin temp = *this;
+		temp.nrAngajati = nrAngajati + m.nrAngajati;
+		float* aux = new float[m.nrAngajati];
+		for (int i = 0; i < nrAngajati; i++)
+		{
+			aux[i] = salarii[i];
+		}
+		for (int i = 0; i < m.nrAngajati; i++) {
+			aux[i + this->nrAngajati] = m.salarii[i];
+		}
+		if (temp.salarii != NULL)
+		{
+			delete[]temp.salarii;
+		}
+		temp.salarii = aux;
+		return temp;
+	}
+
+	Magazin operator+=(const Magazin& m) //diferenta dintr += si + : this se modifica la +=, la + this nu se modifica
+	{
+		nrAngajati = nrAngajati + m.nrAngajati;
+		return *this;
+	}
+
+	Magazin operator+(float marireAngajati)const
+	{
+		Magazin aux = *this;
+		aux.nrAngajati = this->nrAngajati + marireAngajati;
+		return aux;
+	}
+
+	friend Magazin operator+(float marire, const Magazin& m); //fol get si set daca nu o declaram friend
 };
 int Magazin::impozitM2 = 2; //:: operator de rezolutie -> acceseaza in clasa
 
 //difernta dintre o metoda si o functie: metoda primeste pointerul this
+
+Magazin operator+(float marire, const Magazin& m) //este functie nu metoda
+{
+	Magazin aux = m;
+	aux.nrAngajati = marire + m.nrAngajati;
+	return aux;
+}
 
 int main()
 {
@@ -161,4 +235,12 @@ int main()
 
 	Magazin m3(m2);//prima met de a apela const de copy
 	Magazin m4 = m2;//a doua met de a apela const de copy
+
+	m1.afisare();
+	Magazin m5;
+	m5 = m1;
+	m5.afisare();
+
+	//m2 + m3
+	//m2.operator+(m3)
 }
