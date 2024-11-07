@@ -206,6 +206,8 @@ public: //se recomanda sa fie atributele in private mereu
 		return aux;
 	}
 
+
+
 	friend Magazin operator+(float marire, const Magazin& m); //fol get si set daca nu o declaram friend
 };
 int Magazin::impozitM2 = 2; //:: operator de rezolutie -> acceseaza in clasa
