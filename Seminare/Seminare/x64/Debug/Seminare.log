@@ -1,4 +1,8 @@
-﻿  Seminar 3.cpp
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3.cpp(31,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3.cpp(102,1): warning C4715: 'Magazin::getSalariu': not all control paths return a value
+﻿  Seminar 3_4_5_6.cpp
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3_4_5_6.cpp(31,28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3_4_5_6.cpp(205,37): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3_4_5_6.cpp(259,26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3_4_5_6.cpp(339,13): warning C4101: 'exceptie': unreferenced local variable
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3_4_5_6.cpp(343,15): warning C4101: 'exceptie': unreferenced local variable
+C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\Seminare\Seminar 3_4_5_6.cpp(102,1): warning C4715: 'Magazin::getSalariu': not all control paths return a value
   Seminare.vcxproj -> C:\Users\Adina Oratovschi\source\repos\Oratovschi_Adina_ActivitatePOO2024\Seminare\x64\Debug\Seminare.exe

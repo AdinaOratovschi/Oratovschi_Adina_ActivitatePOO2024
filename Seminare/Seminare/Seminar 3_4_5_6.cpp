@@ -206,13 +206,52 @@ public: //se recomanda sa fie atributele in private mereu
 		return aux;
 	}
 
+	bool operator>(Magazin m)
+	{
+		return this->suprafata > m.suprafata && this->nrAngajati > m.nrAngajati;
+	}
 
+	bool operator==(Magazin m)
+	{
+		return this->suprafata == m.suprafata && this->nrAngajati == m.nrAngajati;
+	}
+
+	operator int()
+	{
+		return this->nrAngajati;
+	}
+
+	operator float()
+	{
+		float s = 0;
+		for (int i = 0; i < this->nrAngajati; i++)
+		{
+			s += this->salarii[i];
+		}
+		return s;
+	}
+
+	float& operator[](int index)
+	{
+		if (index >= 0 && index < nrAngajati)
+		{
+			return salarii[index];
+		}
+		else
+		{
+			//pt a lucra cu exceptii: throw, try si catch
+			throw "Indexul este in afara limitelor";
+		}
+	}
 
 	friend Magazin operator+(float marire, const Magazin& m); //fol get si set daca nu o declaram friend
+	friend ostream& operator<<(ostream& consola, const Magazin& m);
+	//friend istream& operator>>(istream& consola, const Magazin& m);
 };
 int Magazin::impozitM2 = 2; //:: operator de rezolutie -> acceseaza in clasa
 
 //difernta dintre o metoda si o functie: metoda primeste pointerul this
+//metoda in clasa, fct in afara
 
 Magazin operator+(float marire, const Magazin& m) //este functie nu metoda
 {
@@ -220,6 +259,29 @@ Magazin operator+(float marire, const Magazin& m) //este functie nu metoda
 	aux.nrAngajati = marire + m.nrAngajati;
 	return aux;
 }
+
+ostream& operator<<(ostream& consola, const Magazin& m) //const pt ca e referinta
+{
+	consola << "Oras:" << m.oras << endl;
+	consola << "Nr angajati:" << m.nrAngajati << endl;
+	if (m.nrAngajati > 0)
+	{
+		for (int i = 0;i < m.nrAngajati;i++)
+		{
+			consola << "Salarii: "<< m.salarii[i] << endl;
+		}
+	}
+	consola << "Suprafata:" << m.suprafata << endl;
+	consola << "An deschidere:" << m.anDeschidere << endl;
+	consola << "Impozit pe m2:" << m.impozitM2 << endl;
+	return consola;
+}
+
+//istream& operator>>(istream& consola, const Magazin& m)
+//{
+//	cout << "Oras: ";
+//	consola >> m.nrAngajati;
+//}
 
 int main()
 {
@@ -232,8 +294,8 @@ int main()
 	cout << m2.getSalarii()[1] << endl;
 	cout << m2.getSalariu(1) << endl;
 
-	m2.setNrAngajati(5, new float[5]{9,6,4,2,7});
-	cout << m2.getSalariu(4) << endl;
+	//m2.setNrAngajati(5, new float[5]{9,6,4,2,7});
+	//cout << m2.getSalariu(4) << endl;
 
 	Magazin m3(m2);//prima met de a apela const de copy
 	Magazin m4 = m2;//a doua met de a apela const de copy
@@ -245,4 +307,56 @@ int main()
 
 	//m2 + m3
 	//m2.operator+(m3)
+
+	if (m1 > m2) //m1.operator>(m2)
+	{
+		cout << "m1 e mai mare" << endl;
+	}
+	else
+		cout << "m2 e mai mare" << endl;
+
+	if (m1 == m2) //m1.operator>(m2)
+	{
+		cout << "m1 e egal cu m2" << endl;
+	}
+	else
+		cout << "nu sunt egale" << endl;
+
+	cout << m2;
+
+	int nrAngajati = (int)m2; //transformare mod explicit
+	
+	float salariiTotale = m2;
+	cout << "Salarii totale: " << salariiTotale<<endl;
+
+	try {
+		cout << m2[1] << endl;
+		m2[1] = 200; //ca sa putem da valoare fol float& altfel se va face o copie locala care este const si nu poate fi modificata
+		cout << m2[1] << endl;
+		float salariuAngajati2 = m2[1]; //aici se incearca rularea acestui cod
+		float s = m2[-9];
+	} 
+	catch (int exceptie)
+	{
+
+	}
+	catch (float exceptie)
+	{
+
+	}
+	catch (const char* exceptie)
+	{
+		cout << exceptie << endl;
+	}
+	catch (string exceptie)
+	{
+
+	}
+	catch (...) //= orice tip de exceptie
+	{
+
+	}
+	
+	//alocare dinamica -> const de copiere, destructor, operator=
+	//metode, fct statice, 1-2 constructori
 }
